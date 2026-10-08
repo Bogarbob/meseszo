@@ -1,0 +1,1154 @@
+:root {
+  --cream: #f7f2e9;
+  --paper: #fffdf8;
+
+  --green: #173f35;
+  --green-light: #315d50;
+
+  --terracotta: #b85e43;
+  --gold: #c89c4c;
+
+  --text: #26332e;
+  --muted: #68746e;
+
+  --line: #ddd7ca;
+
+  --max-width: 1180px;
+  --radius: 24px;
+}
+
+
+/* =====================================================
+   ALAPOK
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--cream);
+  color: var(--text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+
+  color: var(--green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  line-height: 1.08;
+}
+
+p {
+  margin-top: 0;
+}
+
+.container {
+  width: min(
+    var(--max-width),
+    calc(100% - 48px)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   GOMBOK
+===================================================== */
+
+.button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 14px 21px;
+
+  border: 1px solid var(--green);
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    color .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--green);
+  color: white;
+}
+
+.button-primary:hover {
+  background: var(--green-light);
+}
+
+.button-outline {
+  color: var(--green);
+  background: transparent;
+}
+
+.button-outline:hover {
+  background: white;
+}
+
+.button-light {
+  border-color: white;
+  color: white;
+}
+
+
+/* =====================================================
+   FEJLÉC
+===================================================== */
+
+.site-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  background: rgba(247, 242, 233, .94);
+
+  backdrop-filter: blur(14px);
+
+  border-bottom:
+    1px solid rgba(23, 63, 53, .1);
+}
+
+.navigation {
+  min-height: 82px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.logo-symbol {
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+  place-items: center;
+
+  border: 2px solid var(--green);
+  border-radius: 50%;
+
+  font-family: Georgia, serif;
+  font-size: 25px;
+
+  color: var(--terracotta);
+
+  position: relative;
+}
+
+.logo-symbol::after {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  top: 3px;
+  right: 2px;
+
+  background: var(--gold);
+
+  border-radius: 50%;
+}
+
+.logo-name {
+  display: block;
+
+  font-family: Georgia, serif;
+
+  font-weight: bold;
+  font-size: 21px;
+
+  color: var(--green);
+}
+
+.logo-subtitle {
+  display: block;
+
+  margin-top: -2px;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: .08em;
+
+  color: var(--muted);
+}
+
+.menu {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  font-size: 14px;
+
+  color: #46534e;
+}
+
+.menu a:hover {
+  color: var(--terracotta);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  padding: 75px 0 90px;
+}
+
+.hero-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+.eyebrow {
+  margin-bottom: 17px;
+
+  color: var(--terracotta);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: .16em;
+}
+
+.hero h1 {
+  max-width: 680px;
+
+  font-size:
+    clamp(55px, 7vw, 88px);
+
+  letter-spacing: -.045em;
+}
+
+.hero-text {
+  max-width: 580px;
+
+  margin: 26px 0 30px;
+
+  color: #56635d;
+
+  font-size: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+
+/* =====================================================
+   HERO ILLUSZTRÁCIÓ
+===================================================== */
+
+.hero-image {
+  height: 360px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 35px;
+
+  background:
+    radial-gradient(
+      circle at 72% 24%,
+      #f1d394 0 9%,
+      transparent 10%
+    ),
+    linear-gradient(
+      145deg,
+      #244f43,
+      #7e5946 55%,
+      #b85e43
+    );
+
+  box-shadow:
+    0 25px 70px rgba(23, 63, 53, .15);
+}
+
+.hero-image::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 25px;
+
+  border:
+    1px solid rgba(255,255,255,.35);
+
+  border-radius: 25px;
+}
+
+.sun {
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  top: 65px;
+  right: 90px;
+
+  border-radius: 50%;
+
+  background: #e8bd70;
+
+  opacity: .85;
+}
+
+.storyteller {
+  position: absolute;
+
+  left: 18%;
+  bottom: -50px;
+
+  width: 220px;
+  height: 340px;
+
+  background: #15352d;
+
+  border-radius:
+    120px 120px 30px 30px;
+
+  transform: rotate(-5deg);
+}
+
+.storyteller::before {
+  content: "";
+
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  left: 55px;
+  top: -65px;
+
+  border-radius: 50%;
+
+  background: #c88161;
+}
+
+.book {
+  position: absolute;
+
+  width: 190px;
+  height: 130px;
+
+  left: 48%;
+  bottom: 80px;
+
+  border-radius: 8px;
+
+  background: #f6e7c5;
+
+  transform: rotate(-7deg);
+
+  box-shadow:
+    0 15px 30px rgba(0,0,0,.16);
+}
+
+.hero-caption {
+  position: absolute;
+
+  bottom: 30px;
+  left: 35px;
+
+  color: white;
+
+  font-family: Georgia, serif;
+
+  font-size: 19px;
+
+  font-style: italic;
+}
+
+
+/* =====================================================
+   SZEKCIÓK
+===================================================== */
+
+.section {
+  padding: 95px 0;
+}
+
+.section-white {
+  background: var(--paper);
+}
+
+.section-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: end;
+
+  gap: 40px;
+
+  margin-bottom: 38px;
+}
+
+.section-title {
+  font-size: 50px;
+
+  letter-spacing: -.035em;
+}
+
+.section-intro {
+  max-width: 530px;
+
+  color: var(--muted);
+}
+
+
+/* =====================================================
+   ÉRTÉKEK
+===================================================== */
+
+.values {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.value-card {
+  min-height: 245px;
+
+  padding: 34px;
+
+  background: white;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: var(--radius);
+}
+
+.value-icon {
+  margin-bottom: 25px;
+
+  font-size: 28px;
+}
+
+.value-card h3 {
+  margin-bottom: 12px;
+
+  font-size: 28px;
+}
+
+.value-card p {
+  margin: 0;
+
+  color: var(--muted);
+}
+
+
+/* =====================================================
+   PROGRAMOK
+===================================================== */
+
+.events {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.event-card {
+  overflow: hidden;
+
+  background: white;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  box-shadow:
+    0 10px 30px rgba(23,63,53,.05);
+}
+
+.event-picture {
+  height: 230px;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d6b47a,
+      #eadabd 55%,
+      #a45c44
+    );
+}
+
+.event-date {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  padding: 9px 12px;
+
+  background: white;
+
+  border-radius: 14px;
+
+  color: var(--green);
+
+  text-align: center;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.event-date strong {
+  display: block;
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+}
+
+.event-content {
+  padding: 23px;
+}
+
+.event-content h3 {
+  margin-bottom: 10px;
+
+  font-size: 25px;
+}
+
+.event-meta {
+  margin-bottom: 18px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.more {
+  color: var(--terracotta);
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   MESÉT HÍVNÉK
+===================================================== */
+
+.story-section {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 530px;
+}
+
+.story-photo {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 68% 25%,
+      #e9c078 0 9%,
+      transparent 10%
+    ),
+    linear-gradient(
+      145deg,
+      #b85e43,
+      #79503f 55%,
+      #173f35
+    );
+}
+
+.story-content {
+  padding:
+    80px 9vw
+    80px 7vw;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  background: var(--green);
+
+  color: white;
+}
+
+.story-content h2 {
+  color: #fff8e9;
+
+  font-size: 54px;
+}
+
+.story-content p {
+  max-width: 520px;
+
+  margin: 22px 0 28px;
+
+  color: #d9e4de;
+
+  font-size: 18px;
+}
+
+.story-content .button {
+  width: fit-content;
+}
+
+
+/* =====================================================
+   MESEMONDÓK
+===================================================== */
+
+.people {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.person {
+  overflow: hidden;
+
+  background: white;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: var(--radius);
+}
+
+.portrait {
+  aspect-ratio: 1 / 1.08;
+}
+
+.portrait-1 {
+  background:
+    linear-gradient(
+      145deg,
+      #d5b57e,
+      #b85e43 55%,
+      #173f35
+    );
+}
+
+.portrait-2 {
+  background:
+    linear-gradient(
+      145deg,
+      #c7a57d,
+      #6b8976 55%,
+      #345548
+    );
+}
+
+.portrait-3 {
+  background:
+    linear-gradient(
+      145deg,
+      #dec598,
+      #9d5e49 55%,
+      #263f38
+    );
+}
+
+.portrait-4 {
+  background:
+    linear-gradient(
+      145deg,
+      #d0ad85,
+      #4d705f 55%,
+      #173f35
+    );
+}
+
+.person-info {
+  padding: 18px 20px 22px;
+}
+
+.person-name {
+  display: block;
+
+  color: var(--green);
+
+  font-family: Georgia, serif;
+
+  font-size: 22px;
+
+  font-weight: bold;
+}
+
+.person-role {
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   IDÉZET
+===================================================== */
+
+.quote {
+  padding: 115px 20px;
+
+  background: #eadfc9;
+
+  text-align: center;
+}
+
+.quote-text {
+  max-width: 820px;
+
+  margin: auto;
+
+  color: var(--green);
+
+  font-family: Georgia, serif;
+
+  font-size: 42px;
+
+  font-style: italic;
+
+  line-height: 1.2;
+}
+
+.quote-author {
+  margin-top: 22px;
+
+  color: var(--terracotta);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: .13em;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   BESZÁMOLÓK
+===================================================== */
+
+.stories {
+  display: grid;
+
+  grid-template-columns:
+    1.4fr .8fr .8fr;
+
+  gap: 18px;
+}
+
+.story-card {
+  overflow: hidden;
+
+  background: white;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: var(--radius);
+}
+
+.story-card-image {
+  height: 220px;
+}
+
+.story-card.small .story-card-image {
+  height: 155px;
+}
+
+.story-image-1 {
+  background:
+    linear-gradient(
+      145deg,
+      #b85e43,
+      #d5bc88,
+      #345548
+    );
+}
+
+.story-image-2 {
+  background:
+    linear-gradient(
+      145deg,
+      #d1a977,
+      #668471,
+      #345548
+    );
+}
+
+.story-image-3 {
+  background:
+    linear-gradient(
+      145deg,
+      #a96550,
+      #dec995,
+      #173f35
+    );
+}
+
+.story-card-content {
+  padding: 22px;
+}
+
+.story-card-content h3 {
+  margin: 7px 0;
+
+  font-size: 25px;
+}
+
+.story-card-content p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   TÁMOGATÁS
+===================================================== */
+
+.support {
+  padding: 78px 0;
+
+  background: var(--terracotta);
+
+  color: white;
+}
+
+.support-grid {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.support h2 {
+  color: white;
+
+  font-size: 53px;
+}
+
+.support p {
+  max-width: 650px;
+
+  margin: 15px 0 0;
+
+  color: #fff0e9;
+
+  font-size: 17px;
+}
+
+.support-eyebrow {
+  color: #ffe0d4;
+}
+
+.tax-number {
+  margin-top: 18px;
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  font-weight: bold;
+}
+
+.support-button {
+  flex-shrink: 0;
+
+  background: white;
+
+  border-color: white;
+
+  color: var(--terracotta);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  padding: 60px 0 25px;
+
+  background: #102f28;
+
+  color: #d9e3dc;
+}
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr 1fr 1fr 1fr;
+
+  gap: 45px;
+}
+
+footer h3 {
+  margin-bottom: 15px;
+
+  color: white;
+
+  font-size: 21px;
+}
+
+footer a,
+footer p {
+  display: block;
+
+  margin: 8px 0;
+
+  color: #b9c8c1;
+
+  font-size: 14px;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.copyright {
+  margin-top: 40px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  color: #8fa29a;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .menu {
+    display: none;
+  }
+
+  .hero-grid,
+  .story-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    min-height: 430px;
+  }
+
+  .values,
+  .events {
+    grid-template-columns: 1fr;
+  }
+
+  .people {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stories {
+    grid-template-columns: 1fr;
+  }
+
+  .support-grid {
+    display: block;
+  }
+
+  .support .button {
+    margin-top: 25px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* =====================================================
+   MOBIL
+===================================================== */
+
+@media (max-width: 560px) {
+
+  .container {
+    width:
+      min(
+        100% - 32px,
+        var(--max-width)
+      );
+  }
+
+  .navigation {
+    min-height: 72px;
+  }
+
+  .logo-subtitle {
+    display: none;
+  }
+
+  .navigation > .button {
+    padding: 10px 14px;
+
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 55px 0 65px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero-text {
+    font-size: 17px;
+  }
+
+  .hero-image {
+    min-height: 360px;
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading .button {
+    margin-top: 20px;
+  }
+
+  .section-title,
+  .story-content h2,
+  .support h2 {
+    font-size: 40px;
+  }
+
+  .people {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .person-info {
+    padding: 13px;
+  }
+
+  .person-name {
+    font-size: 18px;
+  }
+
+  .quote {
+    padding: 80px 20px;
+  }
+
+  .quote-text {
+    font-size: 30px;
+  }
+
+  .story-content {
+    padding: 65px 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
